@@ -43,7 +43,7 @@ export default function AdminLogin() {
         />
         <button
           type="submit"
-          className="bg-red-500 text-white px-4 py-2 rounded w-full"
+          className="bg-black text-white hover:bg-white hover:text-black px-4 py-2 rounded w-full"
         >
           Login
         </button>

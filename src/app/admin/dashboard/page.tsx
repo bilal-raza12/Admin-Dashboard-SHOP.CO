@@ -111,14 +111,14 @@ export default function AdminDashboard() {
     <ProtectedRoute>
       <div className="flex flex-col h-screen bg-gray-100">
         {/* Navbar */}
-        <nav className="bg-red-600 text-white p-4 shadow-lg flex justify-between">
+        <nav className="bg-black text-white p-4 shadow-lg flex justify-between">
           <h2 className="text-2xl font-bold">Admin Dashboard</h2>
           <div className="flex space-x-4">
             {["All", "pending", "dispatch", "success"].map((status) => (
               <button
                 key={status}
                 className={`px-4 py-2 rounded-lg transition-all ${
-                  filter === status ? "bg-white text-red-600 font-bold" : "text-white"
+                  filter === status ? "bg-white text-black font-bold" : "text-white"
                 }`}
                 onClick={() => setFilter(status)}
               >
@@ -133,7 +133,7 @@ export default function AdminDashboard() {
           <h2 className="text-2xl font-bold mb-4 text-center">Orders</h2>
           <div className="overflow-x-auto bg-white shadow-md rounded-lg">
             <table className="min-w-full divide-y divide-gray-200 text-sm lg:text-base">
-              <thead className="bg-gray-50 text-red-600">
+              <thead className="bg-gray-50 text-black">
                 <tr>
                   <th>ID</th>
                   <th>Customer</th>
@@ -148,7 +148,7 @@ export default function AdminDashboard() {
                 {filteredOrders.map((order) => (
                   <React.Fragment key={order._id}>
                     <tr
-                      className="cursor-pointer hover:bg-red-100 transition-all "
+                      className="cursor-pointer hover:bg-black-100 transition-all "
                       onClick={() => toggleOrderDetails(order._id)}
                     >
                       <td>{order._id}</td>
@@ -173,7 +173,7 @@ export default function AdminDashboard() {
                             e.stopPropagation();
                             handleDelete(order._id);
                           }}
-                          className="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-700 transition"
+                          className="bg-black text-white px-3 py-1 rounded hover:bg-gray-400 transition"
                         >
                           Delete
                         </button>
